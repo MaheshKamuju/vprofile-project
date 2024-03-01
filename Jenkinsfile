@@ -14,13 +14,13 @@ pipeline {
         NEXUS_IP = '34.83.111.217'
         NEXUS_PORT = '8081'
         NEXUS_GRP_REPO = 'vpro-maven-group'
-        NEXUS_LOGIN = 'nexuslogin'
+        NEXUS_LOGIN = 'nexus login'
     }
 
     stages {
         stage('Build'){
             steps {
-                sh 'mvn -s settings.xml -DskipTests install'
+                sh 'mvn -s pom.xml -DskipTests install'
             }
             
         }
